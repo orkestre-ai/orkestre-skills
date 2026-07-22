@@ -58,7 +58,7 @@ The `/orkestre:ask` and `/orkestre:ask-deep` commands chain these two agents: ex
 ### Add the Marketplace
 
 ```
-/plugin marketplace add grassriots/orkestre-skills
+/plugin marketplace add orkestre-ai/orkestre-skills
 ```
 
 ### Install the Plugin
