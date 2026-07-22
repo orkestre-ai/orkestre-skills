@@ -1,38 +1,82 @@
-# orkestre-skills
+```
+
+                         ██████╗ ██████╗ ██╗  ██╗███████╗███████╗████████╗██████╗ ███████╗
+                        ██╔═══██╗██╔══██╗██║ ██╔╝██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝
+                        ██║   ██║██████╔╝█████╔╝ █████╗  ███████╗   ██║   ██████╔╝█████╗
+                        ██║   ██║██╔══██╗██╔═██╗ ██╔══╝  ╚════██║   ██║   ██╔══██╗██╔══╝
+                        ╚██████╔╝██║  ██║██║  ██╗███████╗███████║   ██║   ██║  ██║███████╗
+                         ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝
+
+                                ┌────────────────────────────────────────────────┐
+                                │  ░▒▓█   CLAUDE CODE PLUGIN MARKETPLACE   █▓▒░  │
+                                │  ────────────────────────────────────────────  │
+                                │  [*] SKILLS [*] AGENTS [*] COMMANDS [*] HOOKS  │
+                                └────────────────────────────────────────────────┘
+
+```
+
+# Orkestre Skills
 
 Public Claude Code skills, commands, and agents from Orkestre.
 
-> **Generated file.** This repository is produced by `scripts/publish-public.py`
-> in the private source repo from `public-allowlist.json`. Do not hand-edit —
-> changes here will be overwritten on the next publish.
+> **Generated file.** This repository is a curated public mirror produced by
+> `scripts/publish-public.py` in the private source repo, from
+> `public-allowlist.json`. Do not hand-edit — changes here are overwritten on
+> the next publish.
 
-## Install
+---
+
+## What's in `orkestre`
+
+### Skills
+
+| Skill | Category | Description |
+|-------|----------|-------------|
+| **session-retrospective** | development | Post-session retrospective: diagnose where Claude's model of reality diverged (7 divergence categories, severity-scored) and propose minimum-viable context patches (FACT/GUARDRAIL/WORKFLOW). Environment-adaptive — full repo verification in Claude Code, attachment-based in Claude Desktop/claude.ai (upload as a custom skill). |
+
+### Slash Commands
+
+| Command | Model | Description |
+|---------|-------|-------------|
+| `/orkestre:ask` | Haiku | Ask a read-only question about the codebase. Delegates to `codebase-explorer` for multi-file search and `deep-reasoner` for complex synthesis. |
+| `/orkestre:ask-deep` | Opus | Same workflow as `/ask` but escalates to Opus for deeper reasoning — architectural tradeoffs, subtle bugs, design critique. |
+| `/orkestre:ask-simple` | default | Minimal read-only Q&A. No subagent delegation, no escalation — just read, search, and answer directly. |
+
+### Subagents
+
+| Agent | Model | Description |
+|-------|-------|-------------|
+| **codebase-explorer** | Haiku | Gathers relevant code and context across multiple files. Read-only, no edits. Returns findings with file paths, line numbers, and flagged patterns. |
+| **deep-reasoner** | Opus | Analyzes complex questions requiring careful reasoning — architecture tradeoffs, subtle bug hypotheses, design critique, root cause analysis. Expects pre-gathered context in the prompt. |
+
+The `/orkestre:ask` and `/orkestre:ask-deep` commands chain these two agents: explorer collects the code, then deep-reasoner synthesizes the answer.
+
+---
+
+## Installation
+
+### Add the Marketplace
 
 ```
 /plugin marketplace add grassriots/orkestre-skills
+```
+
+### Install the Plugin
+
+```
 /plugin install orkestre@orkestre-skills
 ```
 
 Commands are then available as `/orkestre:<command>` (e.g. `/orkestre:ask`).
 
-## Skills
+### Update to Latest Version
 
-| Name | Description |
-| --- | --- |
-| `session-retrospective` | Post-session retrospective that diagnoses where Claude's model of reality diverged from actual reality — hallucinated APIs, stale knowledge, unfounded assumptions, tool misuse, plan drift — and proposes minimum-viable patches to the context that governs the next session (project instructions, plans, skills, commands, memory). Use when the user asks for a "session retrospective", "retro this session", "post-mortem", "why did this session go off the rails", "audit this handoff/transcript", or wants to turn a session's failures into fixes. Works in any Claude surface — Claude Code, Claude Desktop, claude.ai — on the live conversation, an attached/linked handoff doc, or an exported transcript. |
+```
+/plugin marketplace update
+```
 
-## Commands
-
-| Name | Description |
-| --- | --- |
-| `ask` | Ask a read-only question about the codebase. Runs on your session model; delegates search to the Haiku codebase-explorer subagent. |
-| `ask-deep` | Ask a read-only question with deeper reasoning (Opus) |
-| `ask-simple` | Ask questions without making any changes (read-only mode) |
-
-## Agents
-
-| Name | Description |
-| --- | --- |
-| `codebase-explorer` | Explores the codebase to answer questions. Use when a question requires searching multiple files, finding symbol definitions, understanding how pieces connect, or mapping unfamiliar code. Read-only. |
-| `deep-reasoner` | Analyzes complex questions requiring careful reasoning — architecture tradeoffs, subtle bug hypotheses, design critique, root cause analysis. Expects all necessary code context in the prompt; does minimal exploration. |
-
+```
+        ╔══════════════════════════════════════════════════════╗
+        ║  g r a s s r i o t s  //  o r k e s t r e  2 0 2 5   ║
+        ╚══════════════════════════════════════════════════════╝
+```
