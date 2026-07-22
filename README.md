@@ -39,7 +39,7 @@ Public Claude Code skills, commands, and agents from Orkestre.
 | Command | Model | Description |
 |---------|-------|-------------|
 | `/orkestre:ask` | Haiku | Ask a read-only question about the codebase. Delegates to `codebase-explorer` for multi-file search and `deep-reasoner` for complex synthesis. |
-| `/orkestre:ask-deep` | Opus | Same workflow as `/ask` but escalates to Opus for deeper reasoning — architectural tradeoffs, subtle bugs, design critique. |
+| `/orkestre:ask-deep` | Opus | Same workflow as `/orkestre:ask` but escalates to Opus for deeper reasoning — architectural tradeoffs, subtle bugs, design critique. |
 | `/orkestre:ask-simple` | default | Minimal read-only Q&A. No subagent delegation, no escalation — just read, search, and answer directly. |
 
 ### Subagents
