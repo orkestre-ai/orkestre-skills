@@ -26,7 +26,8 @@
       ],
       "description": "Read-only codebase Q&A and session retrospectives. Invoke commands as /orkestre:<command>.",
       "version": "0.1.0",
-      "category": "development"
+      "category": "development",
+      "license": "MIT"
     }
   ]
 }

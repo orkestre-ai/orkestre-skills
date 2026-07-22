@@ -75,6 +75,12 @@ Commands are then available as `/orkestre:<command>` (e.g. `/orkestre:ask`).
 /plugin marketplace update
 ```
 
+---
+
+## License
+
+Released under the MIT License — see [LICENSE](./LICENSE).
+
 ```
         ╔══════════════════════════════════════════════════════╗
         ║  g r a s s r i o t s  //  o r k e s t r e  2 0 2 5   ║
