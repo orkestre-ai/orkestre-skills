@@ -1,0 +1,32 @@
+{
+  "name": "orkestre-skills",
+  "owner": {
+    "name": "Orkestre Team"
+  },
+  "metadata": {
+    "description": "Public Claude Code skills, commands, and agents from Orkestre.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "orkestre",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/session-retrospective"
+      ],
+      "commands": [
+        "./commands/ask.md",
+        "./commands/ask-deep.md",
+        "./commands/ask-simple.md"
+      ],
+      "agents": [
+        "./agents/codebase-explorer.md",
+        "./agents/deep-reasoner.md"
+      ],
+      "description": "Read-only codebase Q&A and session retrospectives. Invoke commands as /orkestre:<command>.",
+      "version": "0.1.0",
+      "category": "development"
+    }
+  ]
+}
